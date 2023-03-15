@@ -1,3 +1,9 @@
+import hashlib
+
+h = hashlib.sha256()
+h.update(b"password")
+
+
 def password():
     password = input("Choose a password ")
     
@@ -20,6 +26,7 @@ def password():
                                                 for maximum in maj:
                                                     if lettre == maximum:
                                                         print("Password saved")
+                                                        print(h.hexdigest())
                                                         return True
 
     print("Restart and change your password ")
